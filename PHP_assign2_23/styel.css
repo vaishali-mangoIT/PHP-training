@@ -1,0 +1,22 @@
+td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 9px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    color: brown;
+}
+
+h2 {
+    color: brown;
+    text-align: center;
+    margin-top: 20vh;
+}
