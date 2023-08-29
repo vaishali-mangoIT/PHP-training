@@ -25,9 +25,9 @@
         echo "Color's name: Array data type<br>";
         foreach ($colors as $index => $value) {
             echo $index ."->" .$value."<br>";
-        }
-         
+        }     
     ?>
 </body>
 
 </html>
+
