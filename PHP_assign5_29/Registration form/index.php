@@ -46,27 +46,6 @@
         <input type="submit"></input>
         <a href="showDetails.php">Click to Show User Details</a>
     </form>
-
-    <?php
-        $fnameErr = $lnameErr = $emailErr = $dobErr = $genderErr = $passErr = "";
-        $fname = $lname = $email = $dob = $gender = $password = "";
-
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            if (empty($_GET["first_name"])) {
-                $fnameErr ="First name is required";
-            } else {
-                $fname = test_input($_GET["first_name"]);
-            }
-
-            function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }
-        }
-    ?>
-
 </body>
 
 </html>
