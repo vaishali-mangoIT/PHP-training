@@ -10,7 +10,7 @@
 
 <body>
     <h2>Registration Form</h2>
-    <form action="submitDetails.php" method="get" onsubmit="return validateForm()">
+    <form action="submitDetails.php" method="get">
         <div>
             <label for="fname">First Name :</label>
             <input type="text" placeholder="Enter first name" id="fname" name="first_name">
