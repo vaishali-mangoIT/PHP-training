@@ -49,12 +49,14 @@
                 echo "<td>" .$row["gender"]. "</td>";
                 echo "<td>" .$row["password"]. "</td>";
                 echo "</tr>";
+            }
+            echo "</table>";
+            $result->free();
         }
-        echo "</table>";
-        $result->free();
-    }
-    $conn->close();
+        $conn->close();
     ?>
 </body>
 
 </html>
+
+
