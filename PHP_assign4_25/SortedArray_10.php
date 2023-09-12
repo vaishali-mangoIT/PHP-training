@@ -16,7 +16,7 @@
                     echo "Array in ascending order:<br>";
                     echo "<pre>";
                     print_r($arr);
-                } else if($order === "des"){
+                } else if($order === "desc"){
                     rsort($arr);
                     echo "<br>Array in descending order:<br>";
                     echo "<pre>";
@@ -28,7 +28,7 @@
         }
         $ages = array(11, -2, 4, 35, 0, 8, -9);
         $input = new Sorting();
-        $input->sortArray($ages, "des");
+        $input->sortArray($ages, "desc");
     ?>
 </body>
 

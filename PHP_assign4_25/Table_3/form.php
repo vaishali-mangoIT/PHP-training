@@ -12,15 +12,19 @@
         class PrintTable {
             private $number;
             function get_table($number){
-                $this->number = $number;
-                for($i=1; $i<=10; $i++){
-                    echo "$this->number * $i = ".($this->number * $i)."<br>";
-                }
+                    echo "Table of number ".$_GET["number"]."<br><br>";
+                    $this->number = $number;
+                    for($i=1; $i<=10; $i++){
+                        echo "$this->number * $i = ".($this->number * $i)."<br>";
+                    }
             }
         }
-        $input = new PrintTable();
-        echo "Table of number ".$_GET["number"]."<br><br>";
-        $input->get_table($_GET["number"]);
+        $input = new PrintTable(); 
+        if(is_numeric($_GET["number"])) {
+            $input->get_table($_GET["number"]);
+        } else {
+            echo "This is not a valid input";
+        }
     ?>
 </body>
 
