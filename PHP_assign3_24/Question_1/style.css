@@ -14,7 +14,6 @@ form {
     border-radius: 20px;
     background-color: rgb(247, 245, 242);
     border: 1px solid brown;
-    box-shadow: 5px 10px 17px rgb(248, 191, 191);
 }
 
 input[type="text"],
