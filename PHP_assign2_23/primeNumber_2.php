@@ -12,13 +12,13 @@
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
 
-        $number = 17;
+        $number = 18;
         $result = isPrime($number);
 
         if ($result == true){
-            echo "This is a Prime Number!!";
+            echo $number." is a Prime Number!!";
         } else{
-            echo "This is not a Prime Number!!";
+            echo $number." is not a Prime Number!!";
         }
 
         function isPrime($number): bool

@@ -12,9 +12,9 @@
         ini_set('display_errors', 1);
         error_reporting(E_ALL);
 
-        $first_number = 100;
-        $second_number = 25;
-        $case = 3;
+        $first_number = 105;
+        $second_number = 5;
+        $case = 4;
 
         switch($case){
             case 1 :
