@@ -16,16 +16,18 @@
         $is_admin = true;
         $city = null;
         $colors = array("red", "blue", "black", "pink", "white", "grey", "yellow");
-        
-        echo("$company : <b>This value data type is String</b><br><br>");
-        echo("$number : <b>This value data type is Integer</b><br><br>");
-        echo("$pi : <b>This value data type is Float</b><br><br>");
-        echo("$is_admin : <b>This value data type is Boolean</b><br><br>");
-        echo("$city : <b>This value data type is Null</b><br><br>");
-        echo "Color's name: Array data type<br>";
-        foreach ($colors as $index => $value) {
-            echo $index ."->" .$value."<br>";
-        }     
+
+        var_dump($company);
+        echo "<br>";
+        var_dump($number);
+        echo "<br>";
+        var_dump($pi);
+        echo "<br>";
+        var_dump($is_admin);
+        echo "<br>";
+        var_dump($city);
+        echo "<br>";
+        print_r($colors);
     ?>
 </body>
 

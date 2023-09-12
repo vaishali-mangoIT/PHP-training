@@ -9,7 +9,7 @@
 
 <body>
     <?php
-        $value = "hmale";
+        $value = "male";
 
         switch($value){
         case "male":{
