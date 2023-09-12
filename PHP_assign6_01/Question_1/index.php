@@ -90,7 +90,7 @@
         </div>
         <div>
             <input type="submit" value="Add">
-            <a href="displayCategories.php">Show Categories</a>
+            <a href="displayCategory.php">Show Categories</a>
         </div>
     </form>
 </body>
