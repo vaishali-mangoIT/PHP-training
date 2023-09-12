@@ -96,7 +96,7 @@
         <h3>Product Details</h3>
         <div>
             <label class="form_field_title">Product Name :<label>
-            <input type="text" name="product_name" id="product" value="<?php echo $product_name; ?>">
+            <input type="text" name="product_name" id="product" autocomplete="off" value="<?php echo $product_name; ?>">
             <p class="error"><?php echo $nameErr ?></p>
         </div>
         <div>
