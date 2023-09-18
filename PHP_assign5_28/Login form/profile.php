@@ -17,9 +17,16 @@ include '../connection.php'
         error_reporting(E_ALL);
         ini_set('display_errors', '1');
         
-        $email = $_GET['email'];
+        session_start(); // Start the session
 
-        $query = "SELECT * FROM Registration where email='$email'";
+        if (!isset($_SESSION['email'])) {
+            header('Location: login.php');
+            exit;
+        }
+
+        $email = $_SESSION['email'];
+
+        $query = "SELECT * FROM users where email='$email'";
 
         echo "<h2>Login Customer's detail</h2>";
 
@@ -48,6 +55,9 @@ include '../connection.php'
             $result->free();
         }
         $conn->close();
+
+        echo "<a href='logout.php' class='logout'>Logout</a>";
+
     ?>
 </body>
 

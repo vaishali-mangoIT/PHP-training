@@ -17,7 +17,7 @@
         error_reporting(E_ALL);
         ini_set('display_errors', '1');        
 
-        $query = "SELECT * FROM Registration";
+        $query = "SELECT * FROM users";
 
         echo "<h2>Registered Customer's detail</h2>";
 

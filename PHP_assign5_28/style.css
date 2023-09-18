@@ -17,7 +17,9 @@ form {
 }
 
 input[type="text"],
-[type="email"],[type="password"], [type="date"] {
+[type="email"],
+[type="password"],
+[type="date"] {
     padding: 8px;
     width: 93%;
     margin: 7px;
@@ -45,7 +47,8 @@ input[type=submit] {
     margin: 10px;
 }
 
-input[type=submit]:hover, a:hover {
+input[type=submit]:hover,
+a:hover {
     background-color: green;
     color: black;
 }
@@ -79,7 +82,8 @@ h2 {
     margin-top: 8vh;
 }
 
-th, td {
+th,
+td {
     border: 1px solid rgb(10, 10, 105);
     padding: 9px;
 }
@@ -105,13 +109,31 @@ a {
 }
 
 .error {
-    color: red; 
+    color: red;
     font-size: 12px;
 }
 
 .login_msg {
     color: red;
     margin-left: 33vw;
+    margin-top: 12px;
     font-size: 16px;
 }
 
+.result {
+    color: green;
+    margin-left: 33vw;
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+.logout {
+    text-decoration: none;
+    background-color: brown;
+    color: white;
+    padding: 8px;
+    margin: 10px;
+    margin-left: 63vw;
+    border-radius: 4px;
+    font-size: 13px;
+}
