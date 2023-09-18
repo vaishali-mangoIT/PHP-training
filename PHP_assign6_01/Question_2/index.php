@@ -9,15 +9,20 @@
 
     $result = $conn->query($query);
     
-    if ($result->num_rows > 0) {
-        $categories = $result->fetch_all(MYSQLI_ASSOC);
+    if ($result) {
+        if ($result->num_rows > 0) {
+            $categories = $result->fetch_all(MYSQLI_ASSOC);
+            // echo "<pre>";
+            // print_r($categories);
+        } else {
+            $categories = array();
+        }
     } else {
-        $categories = array();
+        echo "Error(at fetching categories): " . $conn->error;
     }
 
     $nameErr = "";
-    $product_name = "";
-    $product_identifier = "";
+    $product_name = $product_identifier = "";
     $product_category = [];
     $id = "";
 
@@ -44,19 +49,21 @@
                 $sql = "UPDATE Product_details
                 SET name = '$product_name', identifier = '$product_identifier', categories = '$category_string' WHERE id = $id";
 
-                if ($conn->query($sql) === TRUE) {
-                    echo "Record updated successfully!";
-                } else {
+                if ($conn->query($sql) === FALSE) {
                     echo "Error(at updateing record) : " . $conn->error;
+                } else {
+                    $product_name = "";
+                    $product_identifier = "";
                 }
 
             } else {
                 $sql = "INSERT INTO Product_details(name, identifier, categories) VALUES ('$product_name', '$product_identifier', '$category_string')";
 
-                if ($conn->query($sql) === TRUE) {
-                    echo "Record inserted successfully!";
-                } else {
+                if ($conn->query($sql) === FALSE) {
                     echo "Error(at inserting record) : " . $conn->error;
+                } else {
+                    $product_name = "";
+                    $product_identifier = "";
                 }
             }
             $conn->close();
@@ -96,20 +103,23 @@
         <h3>Product Details</h3>
         <div>
             <label class="form_field_title">Product Name :<label>
-            <input type="text" name="product_name" id="product" autocomplete="off" value="<?php echo $product_name; ?>">
+            <input type="text" name="product_name" id="product" autocomplete="off" value="<?php echo isset($id) ? $product_name : ""; ?>">
             <p class="error"><?php echo $nameErr ?></p>
         </div>
         <div>
             <label class="form_field_title">Identifier :<label>
-            <input type="text" name="product_identifier" id="identifer" value="<?php echo $product_identifier; ?>">
+            <input type="text" name="product_identifier" id="identifer" value="<?php echo isset($id) ? $product_identifier : ""; ?>">
         </div>
         <div>
             <label for = "categories">Categorise :<label>
             <select id="categories" name="category[]" multiple>
-                <?php 
-                    foreach ($categories as $category) { ?>
-                    <option value="<?php echo $category['name']; ?>"><?php echo $category['name']; ?></option>
-                <?php } 
+            <?php
+                foreach ($categories as $category) {
+                    $isSelected = in_array($category['name'], $product_category) ? 'selected' : '';
+            ?>
+                    <option value="<?php echo $category['name']; ?>" <?php echo $isSelected; ?>><?php echo $category['name']; ?></option>
+                <?php
+                }
                 ?>
             </select>
         </div>

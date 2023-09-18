@@ -7,7 +7,8 @@
         $sql = "DELETE FROM Category_details WHERE id = $id";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Record deleted successfully!";
+            header('Location: displayCategory.php');
+            exit;
         } else {
             echo "Error deleting record: " . $conn->error;
         }

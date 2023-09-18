@@ -5,8 +5,7 @@
     ini_set('display_errors', 1);
 
     $nameErr = "";
-    $category_name = "";
-    $category_identifier = "";
+    $category_name = $category_identifier = "";
     $id = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,19 +28,21 @@
                 $sql = "UPDATE Category_details
                 SET name = '$category_name', identifier = '$category_identifier' WHERE id = $id";
 
-                if ($conn->query($sql) === TRUE) {
-                    echo "Record updated successfully!";
-                } else {
+                if ($conn->query($sql) === FALSE) {
                     echo "Error(at updateing record) : " . $conn->error;
+                } else {
+                    $category_name = "";
+                    $category_identifier = "";
                 }
 
             } else {
                 $sql = "INSERT INTO Category_details(name, identifier) VALUE ('$category_name', '$category_identifier')";
 
-                if ($conn->query($sql) === TRUE) {
-                    echo "Record inserted successfully!";
-                } else {
+                if ($conn->query($sql) === FALSE) {
                     echo "Error(at inserting record) : " . $conn->error;
+                } else {
+                    $category_name = "";
+                    $category_identifier = "";
                 }
             }
             $conn->close();
@@ -80,12 +81,12 @@
         <h3>Category Details</h3>
         <div>
             <label class="form_field_title">Category Name :<label>
-            <input type="text" name="category_name" id="category" value="<?php echo $category_name; ?>">
+            <input type="text" name="category_name" id="category" value="<?php echo isset($id) ? $category_name : ''; ?>">
             <p class="error"><?php echo $nameErr ?></p>
         </div>
         <div>
             <label class="form_field_title">Identifier :<label>
-            <input type="text" name="category_identifier" id="identifer" value="<?php echo $category_identifier; ?>">
+            <input type="text" name="category_identifier" id="identifer" value="<?php echo isset($id) ? $category_identifier : ''; ?>">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </div>
         <div>

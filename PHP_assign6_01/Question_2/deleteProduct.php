@@ -7,7 +7,8 @@
         $sql = "DELETE FROM Product_details WHERE id = $id";
 
         if ($conn->query($sql) === TRUE) {
-            echo "Record deleted successfully!";
+            header('Location: displayProduct.php');
+            exit;
         } else {
             echo "Error deleting record: " . $conn->error;
         }
@@ -17,3 +18,6 @@
         echo "No ID available for deletion.";
     }
 ?>
+ 
+
+

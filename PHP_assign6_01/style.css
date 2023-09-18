@@ -39,7 +39,8 @@ input[type=submit] {
     margin: 10px;
 }
 
-input[type=submit]:hover, a:hover {
+input[type=submit]:hover,
+a:hover {
     background-color: green;
     color: black;
 }
@@ -69,7 +70,8 @@ a {
     font-size: 13px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid rgb(10, 10, 105);
     padding: 9px;
 }

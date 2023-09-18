@@ -28,8 +28,6 @@
         <tr>";
 
         if ($result = $conn->query($query)) {
-            // echo "<pre>";
-            // print_r($result);
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["name"] . "</td>";
